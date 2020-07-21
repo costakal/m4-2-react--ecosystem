@@ -11,19 +11,17 @@ const PageHeader = styled.div`
 `;
 
 const PageTitle = styled.h1`
-  font-weight: bold;
+  font-weight: 900;
 `;
 
 const NavBar = styled.div`
   a {
     margin: 15px;
     text-decoration: none;
-    color: black;
   }
 `;
 
 const Header = (props) => {
-  console.log(props);
   return (
     <PageHeader>
       <PageTitle>Fruit Emporium</PageTitle>

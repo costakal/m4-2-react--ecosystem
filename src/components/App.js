@@ -14,7 +14,7 @@ const App = (props) => {
         <Header />
         <Switch>
           <Route exact path="/">
-            <Home />
+            <Home items={props.items} />
           </Route>
           <Route exact path="/about">
             <About />
