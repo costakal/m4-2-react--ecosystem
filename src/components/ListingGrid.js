@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const AllItems = styled.div`
   margin-top: 50px;
@@ -14,7 +15,11 @@ const ItemBlock = styled.div`
   padding: 40px 75px;
   border-radius: 25px;
   box-shadow: -7px 0px 60px -24px;
-
+  text-decoration: none;
+  a {
+    text-decoration: none;
+    color: black;
+  }
   img {
     height: 180px;
     border-radius: 25px;
@@ -39,9 +44,11 @@ const ListingGrid = ({ itemList }) => {
       {items.map((item) => {
         return (
           <ItemBlock key={item.id}>
-            <img src={item.imageSrc} alt={`${item.name}`} />
-            <p className="item-name">{item.name}</p>
-            <p className="latin-name">{item.latinName}</p>
+            <Link to={`/items/${item.id}`}>
+              <img src={item.imageSrc} alt={`${item.name}`} />
+              <p className="item-name">{item.name}</p>{" "}
+              <p className="latin-name">{item.latinName}</p>
+            </Link>
           </ItemBlock>
         );
       })}
