@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const PageHeader = styled.div`
@@ -21,13 +21,28 @@ const NavBar = styled.div`
   }
 `;
 
+const linkCss = {
+  fontWeight: "bold",
+  color: "Teal",
+  textDecoration: "underline",
+};
+
 const Header = (props) => {
   return (
     <PageHeader>
       <PageTitle>Fruit Emporium</PageTitle>
       <NavBar>
-        <Link to="/">Homepage</Link>
-        <Link to="/about">About Page</Link>
+        <NavLink exact to="/" activeClassName="selected" activeStyle={linkCss}>
+          Homepage
+        </NavLink>
+        <NavLink
+          exact
+          to="/about"
+          activeClassName="selected"
+          activeStyle={linkCss}
+        >
+          About Page
+        </NavLink>
       </NavBar>
     </PageHeader>
   );
